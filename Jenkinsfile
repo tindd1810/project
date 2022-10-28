@@ -21,7 +21,7 @@ pipeline {
                 sh '''#!/usr/bin/env bash
                 cd test-jenkins
                 docker login -u ${DOCKER_REGISTRY_USERNAME} -p ${DOCKER_REGISTRY_PASSWORD}
-                docker build --tag "${REGISTRY_NAME}/tindd:${BUILD_NUMBER}" .
+                docker build --tag "${REGISTRY_NAME}/nodejs-tindd:${BUILD_NUMBER}" .
                 docker push "${REGISTRY_NAME}/nodejs-tindd:${BUILD_NUMBER}"
                 '''
             }

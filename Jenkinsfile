@@ -19,7 +19,6 @@ pipeline {
         stage('docker-build/push-registry') {
             steps {
                 sh '''#!/usr/bin/env bash
-                chmod 777 /var/run/docker.sock
                 cd test-jenkins
                 docker login -u ${DOCKER_REGISTRY_USERNAME} -p ${DOCKER_REGISTRY_PASSWORD}
                 docker build --tag "${REGISTRY_NAME}/tindd:${BUILD_NUMBER}" .

@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'ubuntu-aws'
+    }
     environment {
         REGISTRY_NAME               = credentials('REGISTRY_NAME')
         DOCKER_REGISTRY_USERNAME    = credentials('DOCKER_REGISTRY_USERNAME')
